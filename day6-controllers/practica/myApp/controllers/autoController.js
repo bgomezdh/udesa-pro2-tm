@@ -2,7 +2,7 @@ const autos = require('../db/autos');
 
 const autoController = {
     index:function(req, res) {
-        res.send(autos.lista);
+        return res.render('autos', {listaAutos : autos});
       },
       buscarPorColor: function(req,res){
         let autosPorColor = [];
