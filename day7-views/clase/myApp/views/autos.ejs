@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+
+<body class="body">
+    <%-include('./partials/cabecera')  %> 
+    <section>
+    <% for( let i = 0; i < lista.length; i++ ) { %>
+        <article class="listaAutos">
+            <h1>Auto N° <%= i +1 %> </h1>
+            <ul>
+                <li><span>Marca: <%= lista[i].marca %>  </span>    </li>
+                <li><span>Modelo: <%= lista[i].modelo %></span>   </li>
+                <li><span>Año: </span> <%= lista[i].anio %>  </li>
+                <li><span>Color: </span>  <%= lista[i].color %>   </li>
+            </ul>
+        </article>
+    <% } %>
+    
+      
+            
+        
+    </section>
+
+
+</body>
+
+</html>
