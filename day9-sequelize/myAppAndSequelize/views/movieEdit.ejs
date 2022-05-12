@@ -42,21 +42,21 @@
   <main>
     <section class="section-detalle-busqueda flex-box-c">
         <form class="form" action="/movies/register" method="POST">
-            <div class="title">Crear una pelicula</div>
+            <h6 class="title">Crear una pelicula</h6>
             <div class="input-container ic1">
-              <input id="firstname" class="input" type="text" name="titulo" placeholder="Titulo" />
+              <input id="firstname" class="input" type="text" name="titulo" placeholder="Titulo" value="<%= movie.title %>"/>
             </div>
             <div class="input-container ic2">
-              <input id="rating" class="input" type="number" name="valuacion" placeholder="Valuación" />
+              <input id="rating" class="input" type="number" name="valuacion" placeholder="Valuación" value="<%= movie.rating %>" />
             </div>
             <div class="input-container ic2">
-              <input id="lastname" class="input" type="number" name="premios" placeholder="Premios" />
+              <input id="lastname" class="input" type="number" name="premios" placeholder="Premios" value="<%= movie.awards %>" />
             </div>
             <div class="input-container ic2">
-              <input id="email" class="input" type="date" name="fecha" placeholder="Fecha Creación" />
+              <input id="fecha" class="input" type="date" name="fecha" placeholder="Fecha Creación" value="<%= movie.release_date  %>"/>
             </div>
             <div class="input-container ic2">
-                <input id="duracion" class="input" type="number" name="duracion" placeholder="Duración" />
+                <input id="duracion" class="input" type="number" name="duracion" placeholder="Duración" value="<%= movie.length %>"/>
             </div>
               <div class="input-container ic2">
                 <select class="seleccion" name="genero" id="genero">

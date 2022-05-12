@@ -1,36 +1,59 @@
 const db = require("../database/models");
 const movie = db.Movie; /* El alias que le pondre a mi modelo */
 
+
+
 const movieController = {
+
   findAll: (req, res) => {
     movie
-      .findAll({
-        /*   where: [{ awards: 1 }, { length: 120 }], */
-      })
+      .findAll()
       .then((result) => {
-        return res.render("movies", {
-          listaPeliculas: result,
-        });
+        return res.send(result);
       });
-  },
-  show: (req, res) => {
-    let id = req.params.id;
-    movie.findByPk(id).then((result) => {
-      return res.render("moviesDetails", {
-        movie: result,
-      });
-    });
-  },
-  showOne: (req, res) => {
-    let busqueda = req.query.pelicula;
-    db.Movie.findOne({
-      where: [{ title: busqueda }],
-    }).then((result) => {
-      return res.render("moviesDetails", {
-        movie: result,
-      });
-    });
-  },
+  }
+
+
+};
+
+module.exports = movieController;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  /* Clase Larga */
+
+  /* , 
   create: (req, res) => {
     return res.render("register");
   },
@@ -39,6 +62,7 @@ const movieController = {
 
     db.Movie.create({
       title: info.titulo,
+      rating: info.valuacion,
       awards: info.premios,
       release_date: info.fecha,
       length: info.duracion,
@@ -47,6 +71,13 @@ const movieController = {
       return res.redirect("/movies/all");
     });
   },
-};
+  edit: (req, res) => {
+    let id = req.params.id;
+    movie.findByPk(id).then((result) => {
 
-module.exports = movieController;
+      return res.render("movieEdit", {
+        movie: result,
+      });
+    });
+  }  */
+

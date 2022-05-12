@@ -9,9 +9,11 @@ router.get('/id/:id', movieController.show);
 
 router.get('/busqueda/', movieController.showOne);
 
-router.get('/register/', movieController.create);
+/* router.get('/register/', movieController.create);
 
-router.post('/register/', movieController.store);
+router.get('/edit/:id', movieController.edit);
+
+router.post('/register/', movieController.store); */
 
 
 
