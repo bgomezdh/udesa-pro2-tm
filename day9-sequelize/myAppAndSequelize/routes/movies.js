@@ -5,10 +5,10 @@ const movieController = require('../controllers/movieController');
 /* GET users listing. */
 router.get('/all', movieController.findAll);
 
-router.get('/id/:id', movieController.show);
+ router.get('/id/:id', movieController.show);
 
 router.get('/busqueda/', movieController.showOne);
-
+ 
 /* router.get('/register/', movieController.create);
 
 router.get('/edit/:id', movieController.edit);
