@@ -2,7 +2,7 @@
 const db = require("../database/models");
 const user = db.User;
 
-/* Requiriendo el modulo de bcryptjs  */
+/* Requiriendo el modulo de bcryptjs .. */
 const bcryptjs = require("bcryptjs");
 
 const userController = {
@@ -21,7 +21,7 @@ const userController = {
                 if (claveCorrecta) {
                     req.session.user = result.dataValues;
 
-                    /* Evaluar si el checkbox esta en true o existe. */
+                    /* Evaluar si el checkbox esta en true o existe */
 
                     if (req.body.remember != undefined) {
                         res.cookie('userId', req.session.user.id, { maxAge : 1000 * 60 * 5})
@@ -45,18 +45,21 @@ const userController = {
 
     },
     register : (req, res) => {
-        return res.render("registerUser");
+        return res.render("registerUser",);
     },
     procesarRegister : (req, res) => {
         let info = req.body;
-        let passEncriptada = bcryptjs.hashSync(info.password, 10)
+        let passEncriptada = bcryptjs.hashSync(info.password, 10);
+        let imgPerfil = req.file.filename;
+
         let userParaGuardar = {
             name : info.name,
             email : info.email,
             password : passEncriptada,
             remember_token: "false",
             created_at : new Date(),
-            updated_at : new Date()
+            updated_at : new Date(),
+            img : imgPerfil
         }
 
         user.create(userParaGuardar)

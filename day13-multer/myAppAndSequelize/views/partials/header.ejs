@@ -1,7 +1,15 @@
 <header id="header">
     <div class="contenedora">
-      <a href="/movies/all" class="itemContenedora">
-        <img src="/images/logo.png" alt="Soda Estereo" id="logo" /></a>
+     
+      <% if (locals.user != undefined) { %>
+        <a href="/perfil" class="itemContenedora">
+          <img src="/images/usuarios/<%= user.img %>" alt="Foto del usuario <%= user.name %>" id="perfil" style="width: 60px"/>
+        </a>
+      <% }else { %>
+        <a href="/movies/all" class="itemContenedora">
+          <img src="/images/logo.png" alt="Soda Estereo" id="logo" />
+        </a>
+      <% } %> 
 
       <nav class="menuIndex itemContenedora">
         <ul>
